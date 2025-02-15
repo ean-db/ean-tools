@@ -5,7 +5,7 @@ Collection of tools for validating and getting information about EAN (UPC, GTIN)
 ## Installation
 
 ```commandline
-pip install affix-tree
+pip install ean-tools
 ```
 
 ## Usage
