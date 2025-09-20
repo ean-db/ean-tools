@@ -19,7 +19,7 @@ def normalize_barcode(barcode: str, is_isbn: Optional[bool] = None) -> str:
         ValueError: If the barcode is invalid or ambiguous.
     """
     barcode = re.sub(r'[\s-]', '', barcode)
-    if not barcode or not barcode.isdigit() or barcode == '0' * len(barcode):
+    if not barcode or not barcode.isdecimal() or barcode == '0' * len(barcode):
         raise ValueError("Doesn't look like a barcode")
 
     barcode_len = len(barcode)
