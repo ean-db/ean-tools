@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ean-tools"
-version = "0.1.1"
+version = "0.1.2"
 description = "Collection of tools for validating and getting information about EAN (UPC, GTIN) and ISBN barcodes."
 authors = ["EAN-DB <support@ean-db.com>"]
 license = "MIT"
