@@ -3,6 +3,8 @@ from typing import Optional
 
 from ean_tools.check_digits import get_correct_check_digit, has_correct_check_digit, isbn10_has_correct_check_digit
 
+_BARCODE_REGEX = re.compile(r'[0-9]+')
+
 
 def normalize_barcode(barcode: str, is_isbn: Optional[bool] = None) -> str:
     """Normalizes a barcode.
@@ -19,7 +21,7 @@ def normalize_barcode(barcode: str, is_isbn: Optional[bool] = None) -> str:
         ValueError: If the barcode is invalid or ambiguous.
     """
     barcode = re.sub(r'[\s-]', '', barcode)
-    if not barcode or not barcode.isdecimal() or barcode == '0' * len(barcode):
+    if not barcode or not _BARCODE_REGEX.fullmatch(barcode) or barcode == '0' * len(barcode):
         raise ValueError("Doesn't look like a barcode")
 
     barcode_len = len(barcode)

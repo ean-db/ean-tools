@@ -4,7 +4,7 @@ from ean_tools.normalization import convert_isbn10_to_isbn13, normalize_barcode
 
 
 class TestNormalizeBarcode:
-    @pytest.mark.parametrize('barcode', ['test', '', '   ', '123456789X', '00000000', '0₇4509947290₀'])
+    @pytest.mark.parametrize('barcode', ['test', '', '   ', '123456789X', '00000000', '0₇4509947290₀', '٨١٣١٢٥٠٣', '４988006134553'])
     def test_normalize_barcode__invalid_barcodes(self, barcode):
         with pytest.raises(ValueError, match="Doesn't look like a barcode"):
             normalize_barcode(barcode)
