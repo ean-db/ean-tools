@@ -10,7 +10,7 @@ _CURRENT_DIR = os.path.dirname(__file__)
 
 def init_gs1_prefixes() -> AffixTree[dict]:
     with open(os.path.join(_CURRENT_DIR, 'data/gs1-prefixes.yaml')) as gs1_prefixes_file:
-        _gs1_prefixes = yaml.load(gs1_prefixes_file.read(), yaml.CBaseLoader)
+        _gs1_prefixes = yaml.load(gs1_prefixes_file.read(), yaml.BaseLoader)
 
     gs1_prefixes = AffixTree()
     for prefix_group in _gs1_prefixes:
@@ -22,7 +22,7 @@ def init_gs1_prefixes() -> AffixTree[dict]:
 
 def init_gs1_8_prefixes() -> AffixTree[dict]:
     with open(os.path.join(_CURRENT_DIR, 'data/gs1-8-prefixes.yaml')) as gs1_8_prefixes_file:
-        _gs1_8_prefixes = yaml.load(gs1_8_prefixes_file.read(), yaml.CBaseLoader)
+        _gs1_8_prefixes = yaml.load(gs1_8_prefixes_file.read(), yaml.BaseLoader)
 
     gs1_8_prefixes = AffixTree()
     for prefix_group in _gs1_8_prefixes:
@@ -34,7 +34,7 @@ def init_gs1_8_prefixes() -> AffixTree[dict]:
 
 def init_isbn_prefixes() -> AffixTree[dict]:
     with open(os.path.join(_CURRENT_DIR, 'data/isbn-prefixes.yaml')) as isbn_prefixes_file:
-        _isbn_prefixes = yaml.load(isbn_prefixes_file.read(), yaml.CBaseLoader)
+        _isbn_prefixes = yaml.load(isbn_prefixes_file.read(), yaml.BaseLoader)
 
     isbn_prefixes = AffixTree()
     for prefix_group in _isbn_prefixes:
